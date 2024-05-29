@@ -103,8 +103,6 @@ namespace JollyAdminClient.Controllers
             ViewBag.Genders = new SelectList(genderList, "Value", "Text");
             ViewBag.pageTitle = "Thêm mới sản phẩm";
             ViewBag.JsFiles = new List<string> { "product.js" };
-
-
             return View();
         }
 
@@ -112,7 +110,6 @@ namespace JollyAdminClient.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductCreateDTO product, List<IFormFile> imageFiles)
         {
-
             if (ModelState.IsValid)
             {
                 try
@@ -126,9 +123,6 @@ namespace JollyAdminClient.Controllers
                             return RedirectToAction("Create");
                         }
                     }
-
-                    
-
                     var formData = new MultipartFormDataContent();
 
                     foreach (var property in typeof(ProductCreateDTO).GetProperties())

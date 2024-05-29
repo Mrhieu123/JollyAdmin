@@ -99,7 +99,7 @@ namespace JollyAPI.DAO
         public void AddProduct(ProductCreateDTO product, List<IFormFile> imageFiles)
         {
             var newProduct = _mapper.Map<Product>(product);
-
+            newProduct.Gender = "1";
 
             _context.Products.Add(newProduct);
             _context.SaveChanges();
@@ -156,7 +156,7 @@ namespace JollyAPI.DAO
             if (existingProduct != null)
             {
                 _mapper.Map(product, existingProduct);
-
+                existingProduct.Gender = "1";
                 _context.SaveChanges();
 
                 foreach (var imageFile in imageFiles)

@@ -19,7 +19,6 @@ namespace JollyAPI.Models.DTOS
 
         public int? CategoryId { get; set; }
         public int? ColorId { get; set; }
-        public string Gender { get; set; }
         public IFormFileCollection ImageFiles { get; set; }
 
 
