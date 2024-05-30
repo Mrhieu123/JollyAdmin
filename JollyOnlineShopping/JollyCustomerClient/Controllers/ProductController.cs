@@ -68,7 +68,7 @@ namespace JollyCustomerClient.Controllers
             return View();
         }
 
-        public IActionResult Category(int id, string gender = "", int page = 1, string sort = "des")
+        public IActionResult Category(int id, int page = 1, string sort = "des")
         {
             ViewData["JsFiles"] = new List<string>() { "cart/add.js" };
             Category category = db.Categories.Find(id);
@@ -91,10 +91,6 @@ namespace JollyCustomerClient.Controllers
                 products = products.Where(p => p.Category.ParentId == category.Id);
             }
 
-            if (!string.IsNullOrEmpty(gender))
-            {
-                products = products.Where(x => x.Gender.ToLower().Equals(gender.ToLower()));
-            }
 
             int pageSize = 16;
             int skip = (page - 1) * pageSize;
