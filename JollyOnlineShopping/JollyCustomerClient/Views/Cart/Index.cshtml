@@ -5,7 +5,7 @@
 }
 @{
     var userId = Context.Session.GetInt32("userId");
-   
+
 }
 <link rel="stylesheet" href="/assets/css/shopping-cart.css">
 <div id="user-info" data-userid="@userId"></div>
@@ -28,7 +28,6 @@
             <div class="row al_center">
                 <div class="col-4">Sản phẩm</div>
                 <div class="col-2 tc">Giá</div>
-                <div class="col-1 tc">Kích cỡ</div>
                 <div class="col-1 tc">Màu sắc</div>
                 <div class="col-2 tc">Sô lượng</div>
                 <div class="col-2 tc tr_md">Đơn giá</div>
@@ -60,12 +59,12 @@
                     </button>
                     @*@if (listItems == null || listItems.Count == 0)
                     {
-                        <p class="text-danger">Giỏ hàng rỗng, vui lòng quay lại!</p>
+                    <p class="text-danger">Giỏ hàng rỗng, vui lòng quay lại!</p>
                     }
                     else
                     {*@
-                        @if (userId != null)
-						{
+                    @if (userId != null)
+                    {
                         @if (listItems == null || listItems.Count == 0)
                         {
                             <p class="text-danger">Giỏ hàng rỗng, vui lòng quay lại!</p>
@@ -79,13 +78,15 @@
                             </button>
                         }
 
-                    }else{
-                            <a class="text-danger font-weight-bold" href="/User/Login">Vui lòng đăng nhập để tiếp tục đặt hàng.</a>
-                        }
-                        
-                   @* }*@
+                    }
+                    else
+                    {
+                        <a class="text-danger font-weight-bold" href="/User/Login">Vui lòng đăng nhập để tiếp tục đặt hàng.</a>
+                    }
 
-                 
+                    @* }*@
+
+
                 </div>
             </div>
         </div>

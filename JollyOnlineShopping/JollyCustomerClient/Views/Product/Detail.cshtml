@@ -44,16 +44,17 @@
                                 <div class="col-12 col-lg col_thumb">
                                     <div class="p-thumb p-thumb_ppr images sp-pr-gallery equal_nt nt_contain ratio_imgtrue position_8 nt_slider pr_carousel"
                                          data-flickity='{"initialIndex": ".media_id_001","fade":true,"draggable":">1","cellAlign": "center","wrapAround": true,"autoPlay": false,"prevNextButtons":true,"adaptiveHeight": true,"imagesLoaded": false, "lazyLoad": 0,"dragThreshold" : 6,"pageDots": false,"rightToLeft": false }'>
-                                        @if(Model.Images != null && Model.Images.Count > 0)
+                                        @if (Model.Images != null && Model.Images.Count > 0)
                                         {
-                                            @foreach (var image in Model.Images){
-                                            <div class="img_ptw p_ptw p-item sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_66 media_id_001"
-                                             data-mdid="001" data-height="1440" data-width="1128"
-                                             data-ratio="0.7833333333333333" data-mdtype="image"
-                                             data-src="@image.Url"
-                                             data-bgset="@image.Url"
-                                             data-cap="Blush Beanie - color pink , size S"></div>
-                                            <input type="text" id="image" value="@Model.Images.FirstOrDefault()?.Url" hidden />
+                                            @foreach (var image in Model.Images)
+                                            {
+                                                <div class="img_ptw p_ptw p-item sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_66 media_id_001"
+                                                     data-mdid="001" data-height="1440" data-width="1128"
+                                                     data-ratio="0.7833333333333333" data-mdtype="image"
+                                                     data-src="@image.Url"
+                                                     data-bgset="@image.Url"
+                                                     data-cap="Blush Beanie - color pink , size S"></div>
+                                                <input type="text" id="image" value="@Model.Images.FirstOrDefault()?.Url" hidden />
                                             }
                                         }
                                         else
@@ -141,34 +142,6 @@
 
                                                     </ul>
                                                 </div>
-                                                <div class="swatch is-label kalles_swatch_js">
-                                                    <h4 class="swatch__title">
-                                                        Kích thước:
-                                                        @*<span class="nt_name_current user_choose_js">M</span>*@
-                                                    </h4>
-                                                    <ul class="swatches-select swatch__list_pr d-flex">
-                                                        @if (Model.Sizes != null && Model.Sizes.Any())
-                                                        {
-                                                            @for (var i = 0; i < Model.Sizes.Count(); i++)
-                                                            {
-                                                                @if (i == 0)
-                                                                {
-                                                                    <li class="nt-swatch swatch_pr_item pr is-selected" data-escape="S">
-                                                                        <span class="swatch__value_pr">@Model.Sizes.ToList()[i].Name</span>
-                                                                        <input value="@Model.Sizes.ToList()[i].Name" id="size_@i" name="size" type="text" hidden>
-                                                                    </li>
-                                                                }
-                                                                else
-                                                                {
-                                                                    <li class="nt-swatch swatch_pr_item pr" data-escape="S">
-                                                                        <span class="swatch__value_pr">@Model.Sizes.ToList()[i].Name</span>
-                                                                        <input value="@Model.Sizes.ToList()[i].Name" id="size_@i" name="size" type="text" hidden>
-                                                                    </li>
-                                                                }
-                                                            }
-                                                        }
-                                                    </ul>
-                                                </div>
                                             </div>
                                             <div class="nt_cart_form variations_form variations_form_ppr">
                                                 <div class="variations_button in_flex column w__100 buy_qv_false">
@@ -188,7 +161,7 @@
                                                         {
                                                             <div onclick="ModifyItem(@Model.Id)" class="nt_add_w ts__03 pa order-3 wis_added">
                                                                 <a href="#"
-                                                               class="wishlistadd cb chp ttip_nt tooltip_top_left">
+                                                                   class="wishlistadd cb chp ttip_nt tooltip_top_left">
                                                                     <span class="tt_txt">Xóa khỏi danh sách ưa thích</span><i class="facl facl-heart-o"></i>
                                                                 </a>
                                                             </div>
@@ -197,7 +170,7 @@
                                                         {
                                                             <div onclick="ModifyItem(@Model.Id)" class="nt_add_w ts__03 pa order-3">
                                                                 <a href="#"
-                                                               class="wishlistadd cb chp ttip_nt tooltip_top_left">
+                                                                   class="wishlistadd cb chp ttip_nt tooltip_top_left">
                                                                     <span class="tt_txt">Thêm vào danh sách ưa thích</span><i class="facl facl-heart-o"></i>
                                                                 </a>
                                                             </div>
@@ -352,7 +325,9 @@
                                                                         {
                                                                             @Html.Raw(StarRating.GetStarRatingHtml((double)ViewBag.average))
 
-                                                                        } else {
+                                                                        }
+                                                                        else
+                                                                        {
                                                                             <p>Chưa có đánh giá nào</p>
                                                                         }
                                                                     </span>
@@ -370,48 +345,48 @@
                                                             @if (isAuthenticated)
                                                             {
                                                                 <a class="r--button r--flex-center bg-yellow text-white ajax_pp_js"
-                                                               href="#" data-id="#popup-leave-review">
+                                                                   href="#" data-id="#popup-leave-review">
                                                                     <svg xmlns="http://www.w3.org/2000/svg"
-                                                                     width="18.37" height="17.8"
-                                                                     viewBox="0 0 21.682 21.602">
+                                                                         width="18.37" height="17.8"
+                                                                         viewBox="0 0 21.682 21.602">
                                                                         <g id="Symbol_32_2"
-                                                                       data-name="Symbol 32 – 2"
-                                                                       transform="translate(-961.98 -374.155)">
+                                                                           data-name="Symbol 32 – 2"
+                                                                           transform="translate(-961.98 -374.155)">
                                                                             <path d="M0,0H4V11.2L1.937,14h0L0,11.2Z"
-                                                                              transform="translate(979.891 381.756) rotate(40)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-linejoin="round"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(979.891 381.756) rotate(40)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-linejoin="round"
+                                                                                  stroke-width="1"></path>
                                                                             <path d="M0,0H4"
-                                                                              transform="translate(972.692 390.335) rotate(40)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(972.692 390.335) rotate(40)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-width="1"></path>
                                                                             <g transform="translate(981.126 380.964) rotate(40)"
-                                                                           fill="none" stroke="#ffffff"
-                                                                           stroke-width="1">
+                                                                               fill="none" stroke="#ffffff"
+                                                                               stroke-width="1">
                                                                                 <rect width="3.128" height="1.4"
-                                                                                  stroke="none"></rect>
+                                                                                      stroke="none"></rect>
                                                                                 <rect x="0.5" y="0.5"
-                                                                                  width="2.128" height="0.4"
-                                                                                  fill="none"></rect>
+                                                                                      width="2.128" height="0.4"
+                                                                                      fill="none"></rect>
                                                                             </g>
                                                                             <path d="M2858.324,3384.6h7.412"
-                                                                              transform="translate(-1891.1 -3003.987)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(-1891.1 -3003.987)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-linecap="round"
+                                                                                  stroke-linejoin="round"
+                                                                                  stroke-width="1"></path>
                                                                             <path d="M2858.324,3384.6h7.412"
-                                                                              transform="translate(-1891.1 -2999.611)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-linecap="round"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(-1891.1 -2999.611)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-linecap="round"
+                                                                                  stroke-width="1"></path>
                                                                             <path d="M8.952,0H15a2,2,0,0,1,2,2V15a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V12.162"
-                                                                              transform="translate(979.48 391.655) rotate(180)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(979.48 391.655) rotate(180)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-linecap="round"
+                                                                                  stroke-linejoin="round"
+                                                                                  stroke-width="1"></path>
                                                                         </g>
                                                                     </svg>
                                                                     <span class="r--text-write">
@@ -422,48 +397,48 @@
                                                             else
                                                             {
                                                                 <a class="r--button r--flex-center bg-yellow text-white ajax_pp_js"
-                                                               href="#" data-id="" onclick="notifyReview()">
+                                                                   href="#" data-id="" onclick="notifyReview()">
                                                                     <svg xmlns="http://www.w3.org/2000/svg"
-                                                                     width="18.37" height="17.8"
-                                                                     viewBox="0 0 21.682 21.602">
+                                                                         width="18.37" height="17.8"
+                                                                         viewBox="0 0 21.682 21.602">
                                                                         <g id="Symbol_32_2"
-                                                                       data-name="Symbol 32 – 2"
-                                                                       transform="translate(-961.98 -374.155)">
+                                                                           data-name="Symbol 32 – 2"
+                                                                           transform="translate(-961.98 -374.155)">
                                                                             <path d="M0,0H4V11.2L1.937,14h0L0,11.2Z"
-                                                                              transform="translate(979.891 381.756) rotate(40)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-linejoin="round"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(979.891 381.756) rotate(40)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-linejoin="round"
+                                                                                  stroke-width="1"></path>
                                                                             <path d="M0,0H4"
-                                                                              transform="translate(972.692 390.335) rotate(40)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(972.692 390.335) rotate(40)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-width="1"></path>
                                                                             <g transform="translate(981.126 380.964) rotate(40)"
-                                                                           fill="none" stroke="#ffffff"
-                                                                           stroke-width="1">
+                                                                               fill="none" stroke="#ffffff"
+                                                                               stroke-width="1">
                                                                                 <rect width="3.128" height="1.4"
-                                                                                  stroke="none"></rect>
+                                                                                      stroke="none"></rect>
                                                                                 <rect x="0.5" y="0.5"
-                                                                                  width="2.128" height="0.4"
-                                                                                  fill="none"></rect>
+                                                                                      width="2.128" height="0.4"
+                                                                                      fill="none"></rect>
                                                                             </g>
                                                                             <path d="M2858.324,3384.6h7.412"
-                                                                              transform="translate(-1891.1 -3003.987)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(-1891.1 -3003.987)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-linecap="round"
+                                                                                  stroke-linejoin="round"
+                                                                                  stroke-width="1"></path>
                                                                             <path d="M2858.324,3384.6h7.412"
-                                                                              transform="translate(-1891.1 -2999.611)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-linecap="round"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(-1891.1 -2999.611)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-linecap="round"
+                                                                                  stroke-width="1"></path>
                                                                             <path d="M8.952,0H15a2,2,0,0,1,2,2V15a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V12.162"
-                                                                              transform="translate(979.48 391.655) rotate(180)"
-                                                                              fill="none" stroke="#ffffff"
-                                                                              stroke-linecap="round"
-                                                                              stroke-linejoin="round"
-                                                                              stroke-width="1"></path>
+                                                                                  transform="translate(979.48 391.655) rotate(180)"
+                                                                                  fill="none" stroke="#ffffff"
+                                                                                  stroke-linecap="round"
+                                                                                  stroke-linejoin="round"
+                                                                                  stroke-width="1"></path>
                                                                         </g>
                                                                     </svg>
                                                                     <span class="r--text-write">
@@ -537,7 +512,7 @@
                                                                 string displayText = daysAgo == 1 ? "1 ngày trước" : $"{daysAgo} ngày trước";
                                                             }
                                                             <time datetime="@postDate.ToString("yyyy-MM-ddTHH:mm:ssZ")"
-                                                          class="r--date-review r--top r--text-limit">
+                                                                  class="r--date-review r--top r--text-limit">
                                                                 @displayText
                                                             </time>
 
@@ -619,11 +594,11 @@
                                 <div class="product-image pr oh lazyload">
                                     <a class="d-block" href="/product/detail/@item.Id">
                                         <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571"
-                                         data-bgset="@item.Images.ToList()[0].Url"></div>
+                                             data-bgset="@item.Images.ToList()[0].Url"></div>
                                     </a>
                                     <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
                                         <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571"
-                                         data-bgset="@item.Images.ToList()[1].Url"></div>
+                                             data-bgset="@item.Images.ToList()[1].Url"></div>
                                     </div>
                                     <div class="nt_add_w ts__03 pa ">
                                     </div>
@@ -689,7 +664,9 @@
                                     {
                                         @Html.Raw(StarRating.GetStarRatingHtml((double)ViewBag.average))
 
-                                    } else {
+                                    }
+                                    else
+                                    {
                                         <p>Chưa có đánh giá nào</p>
                                     }
 
